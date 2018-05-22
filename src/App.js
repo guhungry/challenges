@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CardC from './components/Card';
 
 import { connect } from 'react-redux';
 import styled from 'styled-components';
@@ -80,6 +81,7 @@ export default connect((state) => state)(
           <p>All donations: {donate}</p>
           <Message>{message}</Message>
           {cards}
+          { this.state.charities.map((item, i) => <CardC item={item} key={i} onPay={handlePay} />) }
         </div>
       );
     }
