@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CardC from './components/Card';
+import Card from './components/Card';
 
 import { connect } from 'react-redux';
 import styled from 'styled-components';
@@ -26,6 +26,9 @@ export default connect((state) => state)(
       };
     }
 
+    // ///////////////////
+    // Lifecycle Functions
+    // ///////////////////
     componentDidMount() {
       const self = this;
       fetch('http://localhost:3001/charities')
@@ -43,20 +46,28 @@ export default connect((state) => state)(
         })
     }
 
+    // ////////////////
+    // Render Functions
+    // ////////////////
     render() {
-      const donate = this.props.donate;
-      const message = this.props.message;
+      const { donate, message } = this.props;
+      const { charities } = this.state
 
       return (
         <div>
           <h1>Tamboon React</h1>
           <p>All donations: {donate}</p>
           <Message>{message}</Message>
-          { this.state.charities.map((item, i) => <CardC item={item} key={i} onPay={this.handlePay} />) }
+          { charities.map(this.renderCharity) }
         </div>
       );
     }
 
+    renderCharity = (item, key) => <Card item={item} key={key} onPay={this.handlePay} />
+
+    // ////////////////
+    // Helper Functions
+    // ////////////////
     handlePay = (id, amount, currency) => () => {
       fetch('http://localhost:3001/payments', {
         method: 'POST',
@@ -65,7 +76,7 @@ export default connect((state) => state)(
           'Content-Type': 'application/json'
         },
       })
-        .then(function(resp) { console.log(resp);return resp.json(); })
+        .then(function(resp) { return resp.json(); })
         .then(() => {
           this.props.dispatch({
             type: 'UPDATE_TOTAL_DONATE',
