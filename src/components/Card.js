@@ -25,11 +25,11 @@ export default class Card extends PureComponent {
     onPay: PropTypes.func
   }
 
-  state = { selectedAmount: 0 };
+  state = { selectedAmount: 0, showPayment: false };
 
   render () {
     const { item, onPay } = this.props
-    const { selectedAmount } = this.state
+    const { selectedAmount, showPayment } = this.state
     const payments = [10, 20, 50, 100, 500].map((amount, j) => this.renderPayment(j, amount));
 
     return (
@@ -37,9 +37,10 @@ export default class Card extends PureComponent {
         <BackgroundImage src={`/images/${item.image}`} />
         <ContainerInfo>
           <p>{item.name}</p>
+          <button onClick={this.setShowPayment(true)}>Donate</button>
           <button onClick={onPay.call(this, item.id, selectedAmount, item.currency)}>Pay</button>
         </ContainerInfo>
-        { false && payments}
+        { showPayment && payments}
       </Container>);
   }
 
@@ -49,5 +50,6 @@ export default class Card extends PureComponent {
     </label>
   )
 
-  setAmount = amount => () => this.setState({ selectedAmount: amount })
+  setAmount = selectedAmount => () => this.setState({ selectedAmount })
+  setShowPayment = showPayment => () => this.setState({ showPayment })
 }
