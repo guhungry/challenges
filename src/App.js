@@ -7,6 +7,13 @@ import fetch from 'isomorphic-fetch';
 
 import { responseToJson, summaryDonations } from './helpers';
 
+const AppContainer = styled.div`
+  font-family: Circular, Arial, sans-serif;
+  color: #666;
+`;
+const AppTitle = styled.h1`
+  text-align: center;
+`;
 const Message = styled.p`
   color: red;
   margin: 1em 0;
@@ -54,12 +61,12 @@ export default connect((state) => state)(
       const { charities } = this.state
 
       return (
-        <div>
-          <h1>Tamboon React</h1>
+        <AppContainer>
+          <AppTitle>Omise Tamboon React</AppTitle>
           <p>All donations: {donate}</p>
           <Message>{message}</Message>
           { charities.map(this.renderCharity) }
-        </div>
+        </AppContainer>
       );
     }
 
