@@ -50,28 +50,6 @@ export default connect((state) => state)(
     }
 
     render() {
-      const self = this;
-      const cards = this.state.charities.map(function(item, i) {
-        const payments = [10, 20, 50, 100, 500].map((amount, j) => (
-          <label key={j}>
-            <input
-              type="radio"
-              name="payment"
-              onClick={function() {
-                self.setState({ selectedAmount: amount })
-              }} /> {amount}
-          </label>
-        ));
-
-        return (
-          <Card key={i}>
-            <p>{item.name}</p>
-            {payments}
-            <button onClick={handlePay.call(self, item.id, self.state.selectedAmount, item.currency)}>Pay</button>
-          </Card>
-        );
-      });
-
       const donate = this.props.donate;
       const message = this.props.message;
 
@@ -80,41 +58,37 @@ export default connect((state) => state)(
           <h1>Tamboon React</h1>
           <p>All donations: {donate}</p>
           <Message>{message}</Message>
-          {cards}
-          { this.state.charities.map((item, i) => <CardC item={item} key={i} onPay={handlePay} />) }
+          { this.state.charities.map((item, i) => <CardC item={item} key={i} onPay={this.handlePay} />) }
         </div>
       );
     }
+
+    handlePay = (id, amount, currency) => () => {
+      fetch('http://localhost:3001/payments', {
+        method: 'POST',
+        body: `{ "charitiesId": ${id}, "amount": ${amount}, "currency": "${currency}" }`,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      })
+        .then(function(resp) { console.log(resp);return resp.json(); })
+        .then(() => {
+          this.props.dispatch({
+            type: 'UPDATE_TOTAL_DONATE',
+            amount,
+          });
+          this.props.dispatch({
+            type: 'UPDATE_MESSAGE',
+            message: `Thanks for donate ${amount}!`,
+          });
+
+          setTimeout(() => {
+            this.props.dispatch({
+              type: 'UPDATE_MESSAGE',
+              message: '',
+            });
+          }, 2000);
+        });
+    }
   }
 );
-
-function handlePay(id, amount, currency) {
-  const self = this;
-  return function() {
-    fetch('http://localhost:3001/payments', {
-      method: 'POST',
-      body: `{ "charitiesId": ${id}, "amount": ${amount}, "currency": "${currency}" }`,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    })
-      .then(function(resp) { return resp.json(); })
-      .then(function() {
-        self.props.dispatch({
-          type: 'UPDATE_TOTAL_DONATE',
-          amount,
-        });
-        self.props.dispatch({
-          type: 'UPDATE_MESSAGE',
-          message: `Thanks for donate ${amount}!`,
-        });
-
-        setTimeout(function() {
-          self.props.dispatch({
-            type: 'UPDATE_MESSAGE',
-            message: '',
-          });
-        }, 2000);
-      });
-  }
-}
