@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import Button from './Button'
+import RadioButton from './RadioButton'
 import { Container, BackgroundImage, ContainerInfo, Overlay, ButtonClose, ContainerPopup, ContainerOption } from './Card.Components'
 
 import PropTypes from 'prop-types'
@@ -30,7 +31,7 @@ export default class Card extends PureComponent {
   renderPaymentOverlay = () => {
     const { item, onPay } = this.props
     const { selectedAmount } = this.state
-    const payments = [10, 20, 50, 100, 500].map((amount, j) => this.renderPayment(j, amount));
+    const payments = [10, 20, 50, 100, 500].map(this.renderPayment);
 
     return (
       <Overlay>
@@ -44,10 +45,8 @@ export default class Card extends PureComponent {
     )
   }
 
-  renderPayment = (key, amount) => (
-    <label key={key}>
-      <input type="radio" name="payment" onClick={this.setAmount(amount)} /> {amount}
-    </label>
+  renderPayment = (amount, key) => (
+    <RadioButton key={key} name='payment' onChange={this.setAmount(amount)} title={amount} />
   )
 
   setAmount = selectedAmount => () => this.setState({ selectedAmount })
