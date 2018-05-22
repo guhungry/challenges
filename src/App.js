@@ -44,7 +44,7 @@ export default connect((state) => state)(
         .then(function(data) {
           self.props.dispatch({
             type: 'UPDATE_TOTAL_DONATE',
-            amount: summaryDonations(data.map((item) => (item.amount))),
+            amount: summaryDonations(data.map((item) => (item.amount || 0))),
           });
         })
     }
