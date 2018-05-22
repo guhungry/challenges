@@ -7,6 +7,11 @@ const Container = styled.div`
   margin: 10px;
   border: 1px solid #ccc;
 `;
+const BackgroundImage = styled.div`
+  background-image: url(${props => props.src});
+  background-size: cover;
+  padding-bottom: ${100*(3/4)}%;
+`;
 
 export default class Card extends PureComponent {
   static propTypes = {
@@ -23,6 +28,7 @@ export default class Card extends PureComponent {
 
     return (
       <Container>
+        <BackgroundImage src={`/images/${item.image}`} />
         <img src={`/images/${item.image}`} />
         <p>{item.name}</p>
         { false && payments}
