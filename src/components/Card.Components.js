@@ -32,3 +32,12 @@ export const ButtonClose = styled.button`
   right: 15px;
   top: 15px;
 `;
+export const ContainerPopup = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+export const ContainerOption = styled.div`
+  margin: 15px 0 10px;
+`;

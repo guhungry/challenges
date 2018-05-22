@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Button from './Button'
-import { Container, BackgroundImage, ContainerInfo, Overlay, ButtonClose } from './Card.Components'
+import { Container, BackgroundImage, ContainerInfo, Overlay, ButtonClose, ContainerPopup, ContainerOption } from './Card.Components'
 
 import PropTypes from 'prop-types'
 
@@ -35,12 +35,11 @@ export default class Card extends PureComponent {
     return (
       <Overlay>
         <ButtonClose onClick={this.setShowPayment(false)}>X</ButtonClose>
-        <div style={{textAlign: 'center'}}>
+        <ContainerPopup>
           <div>Select the amount to donate (USD)</div>
-          <div>{ payments }</div>
+          <ContainerOption>{ payments }</ContainerOption>
           <Button onClick={onPay.call(this, item.id, selectedAmount, item.currency)} title='Pay' />
-          <button onClick={onPay.call(this, item.id, selectedAmount, item.currency)}>Pay</button>
-        </div>
+        </ContainerPopup>
       </Overlay>
     )
   }
