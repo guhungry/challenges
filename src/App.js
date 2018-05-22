@@ -94,6 +94,9 @@ function handlePay(id, amount, currency) {
     fetch('http://localhost:3001/payments', {
       method: 'POST',
       body: `{ "charitiesId": ${id}, "amount": ${amount}, "currency": "${currency}" }`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
     })
       .then(function(resp) { return resp.json(); })
       .then(function() {
