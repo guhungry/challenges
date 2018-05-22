@@ -12,6 +12,14 @@ const Card = styled.div`
   border: 1px solid #ccc;
 `;
 
+const Message = styled.p`
+  color: red;
+  margin: 1em 0;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+`;
+
 export default connect((state) => state)(
   class App extends Component {
     constructor(props) {
@@ -63,13 +71,6 @@ export default connect((state) => state)(
         );
       });
 
-      const style = {
-        color: 'red',
-        margin: '1em 0',
-        fontWeight: 'bold',
-        fontSize: '16px',
-        textAlign: 'center',
-      };
       const donate = this.props.donate;
       const message = this.props.message;
 
@@ -77,7 +78,7 @@ export default connect((state) => state)(
         <div>
           <h1>Tamboon React</h1>
           <p>All donations: {donate}</p>
-          <p style={style}>{message}</p>
+          <Message>{message}</Message>
           {cards}
         </div>
       );
