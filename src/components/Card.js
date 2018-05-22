@@ -12,6 +12,12 @@ const BackgroundImage = styled.div`
   background-size: cover;
   padding-bottom: ${100*(3/4)}%;
 `;
+const ContainerInfo = styled.div`
+  display: flex;
+  padding: 10px 15px;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export default class Card extends PureComponent {
   static propTypes = {
@@ -29,10 +35,11 @@ export default class Card extends PureComponent {
     return (
       <Container>
         <BackgroundImage src={`/images/${item.image}`} />
-        <img src={`/images/${item.image}`} />
-        <p>{item.name}</p>
+        <ContainerInfo>
+          <p>{item.name}</p>
+          <button onClick={onPay.call(this, item.id, selectedAmount, item.currency)}>Pay</button>
+        </ContainerInfo>
         { false && payments}
-        <button onClick={onPay.call(this, item.id, selectedAmount, item.currency)}>Pay</button>
       </Container>);
   }
 
