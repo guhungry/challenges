@@ -2,8 +2,10 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   margin: 10px;
-  border: 1px solid #ccc;
   position: relative;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 10px 1px #ccc;
 `;
 export const BackgroundImage = styled.div`
   background-image: url(${props => props.src});

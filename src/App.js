@@ -7,12 +7,6 @@ import fetch from 'isomorphic-fetch';
 
 import { summaryDonations } from './helpers';
 
-
-const Card = styled.div`
-  margin: 10px;
-  border: 1px solid #ccc;
-`;
-
 const Message = styled.p`
   color: red;
   margin: 1em 0;
