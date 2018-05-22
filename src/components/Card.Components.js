@@ -1,3 +1,4 @@
+import Link from './Link'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -29,10 +30,11 @@ export const Overlay = styled.div`
   align-items: center;
   justify-content: center;
 `;
-export const ButtonClose = styled.button`
+export const ButtonClose = styled(Link)`
   position: absolute;
-  right: 15px;
-  top: 15px;
+  padding: 5px;
+  right: 10px;
+  top: 10px;
 `;
 export const ContainerPopup = styled.div`
   text-align: center;
