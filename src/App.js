@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import fetch from 'isomorphic-fetch';
 
-import { summaryDonations } from './helpers';
+import { responseToJson, summaryDonations } from './helpers';
 
 const Message = styled.p`
   color: red;
@@ -32,12 +32,12 @@ export default connect((state) => state)(
     componentDidMount() {
       const self = this;
       fetch('http://localhost:3001/charities')
-        .then(function(resp) { return resp.json(); })
+        .then(responseToJson)
         .then(function(data) {
           self.setState({ charities: data }) });
 
       fetch('http://localhost:3001/payments')
-        .then(function(resp) { return resp.json() })
+        .then(responseToJson)
         .then(function(data) {
           self.props.dispatch({
             type: 'UPDATE_TOTAL_DONATE',
@@ -76,7 +76,7 @@ export default connect((state) => state)(
           'Content-Type': 'application/json'
         },
       })
-        .then(function(resp) { return resp.json(); })
+        .then(responseToJson)
         .then(() => {
           this.props.dispatch({
             type: 'UPDATE_TOTAL_DONATE',
