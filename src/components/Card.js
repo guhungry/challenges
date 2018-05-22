@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Button from './Button'
 import { Container, BackgroundImage, ContainerInfo, Overlay, ButtonClose } from './Card.Components'
 
 import PropTypes from 'prop-types'
@@ -20,7 +21,7 @@ export default class Card extends PureComponent {
         <BackgroundImage src={`/images/${item.image}`} />
         <ContainerInfo>
           <p>{item.name}</p>
-          <button onClick={this.setShowPayment(true)}>Donate</button>
+          <Button onClick={this.setShowPayment(true)} title='Donate' />
         </ContainerInfo>
         { showPayment && this.renderPaymentOverlay()}
       </Container>);
@@ -37,6 +38,7 @@ export default class Card extends PureComponent {
         <div style={{textAlign: 'center'}}>
           <div>Select the amount to donate (USD)</div>
           <div>{ payments }</div>
+          <Button onClick={onPay.call(this, item.id, selectedAmount, item.currency)} title='Pay' />
           <button onClick={onPay.call(this, item.id, selectedAmount, item.currency)}>Pay</button>
         </div>
       </Overlay>
