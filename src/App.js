@@ -6,7 +6,7 @@ import ResponsiveRow from './components/ResponsiveRow';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import fetch from 'isomorphic-fetch';
-
+import * as api from './services/TamboonApi'
 import { responseToJson, summaryDonations } from './helpers';
 
 const AppContainer = styled.div`
@@ -38,17 +38,8 @@ class App extends Component {
   // Lifecycle Functions
   // ///////////////////
   componentDidMount() {
-    const self = this;
-    fetch('http://localhost:3001/charities')
-      .then(responseToJson)
-      .then(function(data) {
-        self.setState({ charities: data }) });
-
-    fetch('http://localhost:3001/payments')
-      .then(responseToJson)
-      .then(function(data) {
-        self.props.updateTotalDonate(summaryDonations(data.map(item => item.amount || 0)));
-      })
+    api.charities().then(data => this.setState({ charities: data }));
+    api.payments().then(data => this.props.updateTotalDonate(summaryDonations(data.map(item => item.amount || 0))))
   }
 
   // ////////////////
@@ -76,14 +67,7 @@ class App extends Component {
   // Helper Functions
   // ////////////////
   handlePay = (id, amount, currency) => () => {
-    fetch('http://localhost:3001/payments', {
-      method: 'POST',
-      body: `{ "charitiesId": ${id}, "amount": ${amount}, "currency": "${currency}" }`,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    })
-      .then(responseToJson)
+    api.donate(id, amount, currency)
       .then(() => {
         this.props.updateTotalDonate(amount);
         this.props.updateMessage(`Thanks for donate ${amount}!`);
