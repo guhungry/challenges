@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  margin: auto;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
   @media (min-width: 768px) {
     width: 750px;
   }
