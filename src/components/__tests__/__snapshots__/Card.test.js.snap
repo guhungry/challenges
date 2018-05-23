@@ -8,13 +8,15 @@ exports[`Card should render currectly 1`] = `
     className="sc-ifAKCX jRXylC"
   >
     <div
-      className="sc-EHOje eUpySP"
-      src="/images/bee"
+      className="sc-EHOje bASYSw"
+      src="/images/bee.png"
     />
     <div
       className="sc-bZQynM bjIoQH"
     >
-      <p />
+      <p>
+        Random Donation Title
+      </p>
       <div
         className="sc-bdVaJa KmHrp"
         disabled={false}
