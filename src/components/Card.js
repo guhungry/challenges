@@ -13,6 +13,9 @@ export default class Card extends PureComponent {
 
   state = { selectedAmount: 0, showPayment: false };
 
+  // ////////////////
+  // Render Functions
+  // ////////////////
   render () {
     const { item } = this.props
     const { showPayment } = this.state
@@ -45,10 +48,11 @@ export default class Card extends PureComponent {
     )
   }
 
-  renderPayment = (amount, key) => (
-    <RadioButton key={key} name='payment' onChange={this.setAmount(amount)} title={amount} />
-  )
+  renderPayment = (amount, key) => <RadioButton key={key} name='payment' onChange={this.setAmount(amount)} title={amount} />
 
+  // ////////////////
+  // Helper Functions
+  // ////////////////
   setAmount = selectedAmount => () => this.setState({ selectedAmount })
   setShowPayment = showPayment => () => this.setState({ showPayment })
 }

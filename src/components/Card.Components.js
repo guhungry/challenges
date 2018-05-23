@@ -7,6 +7,7 @@ export const Container = styled.div`
   border-radius: 4px;
   border: 1px solid #ccc;
   box-shadow: 0 3px 10px 1px #ccc;
+  overflow: hidden;
 `;
 export const BackgroundImage = styled.div`
   background-image: url(${props => props.src});
