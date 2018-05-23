@@ -6,7 +6,7 @@ import { AppContainer, AppTitle, Message } from './App.Components'
 
 import { connect } from 'react-redux';
 import * as api from './services/TamboonApi'
-import { donationAmount, summaryDonations } from './helpers';
+import { donationAmount, summaryDonations } from './utils/helpers';
 import DonationAction from './redux/DonationRedux'
 
 class App extends Component {

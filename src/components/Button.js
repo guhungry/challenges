@@ -4,7 +4,7 @@ import Colors from '../styles/Colors'
 
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { noop } from '../helpers'
+import { noop } from '../utils/helpers'
 
 export const Container = styled.div`
   border: 1px solid ${Colors.blueOmise};

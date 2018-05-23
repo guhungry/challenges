@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { responseToJson } from '../helpers'
+import { responseToJson } from '../utils/helpers'
 
 export const charities =  () => fetch('http://localhost:3001/charities').then(responseToJson)
 export const payments =  () => fetch('http://localhost:3001/payments').then(responseToJson)
