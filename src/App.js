@@ -2,26 +2,12 @@ import React, { Component } from 'react';
 import Card from './components/Card';
 import ResponsiveContainer from './components/ResponsiveContainer';
 import ResponsiveRow from './components/ResponsiveRow';
+import { AppContainer, AppTitle, Message } from './App.Components'
 
 import { connect } from 'react-redux';
-import styled from 'styled-components';
 import * as api from './services/TamboonApi'
 import { donationAmount, summaryDonations } from './helpers';
 
-const AppContainer = styled.div`
-  font-family: Circular, Arial, sans-serif;
-  color: #666;
-`;
-const AppTitle = styled.h1`
-  text-align: center;
-`;
-const Message = styled.p`
-  color: red;
-  margin: 1em 0;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-`;
 
 class App extends Component {
   state = {
