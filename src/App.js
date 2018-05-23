@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Card from './components/Card';
+import ResponsiveContainer from './components/ResponsiveContainer';
+import ResponsiveRow from './components/ResponsiveRow';
 
 import { connect } from 'react-redux';
 import styled from 'styled-components';
@@ -63,9 +65,11 @@ export default connect((state) => state)(
       return (
         <AppContainer>
           <AppTitle>Omise Tamboon React</AppTitle>
-          <p>All donations: {donate}</p>
-          <Message>{message}</Message>
-          { charities.map(this.renderCharity) }
+          <ResponsiveContainer>
+            <p>All donations: {donate}</p>
+            <Message>{message}</Message>
+            <ResponsiveRow gutterWidth='20px'>{ charities.map(this.renderCharity) }</ResponsiveRow>
+          </ResponsiveContainer>
         </AppContainer>
       );
     }

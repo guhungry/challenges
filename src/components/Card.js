@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import Button from './Button'
 import RadioButton from './RadioButton'
+import ResponsiveItem from './ResponsiveItem'
 import { Container, BackgroundImage, ContainerInfo, Overlay, ButtonClose, ContainerPopup, ContainerOption } from './Card.Components'
 
 import PropTypes from 'prop-types'
@@ -21,14 +22,17 @@ export default class Card extends PureComponent {
     const { showPayment } = this.state
 
     return (
-      <Container>
-        <BackgroundImage src={`/images/${item.image}`} />
-        <ContainerInfo>
-          <p>{item.name}</p>
-          <Button onClick={this.setShowPayment(true)} title='Donate' />
-        </ContainerInfo>
-        { showPayment && this.renderPaymentOverlay()}
-      </Container>);
+      <ResponsiveItem sizeXs={12} sizeSm={6}>
+        <Container>
+          <BackgroundImage src={`/images/${item.image}`} />
+          <ContainerInfo>
+            <p>{item.name}</p>
+            <Button onClick={this.setShowPayment(true)} title='Donate' />
+          </ContainerInfo>
+          { showPayment && this.renderPaymentOverlay()}
+        </Container>
+      </ResponsiveItem>
+    );
   }
 
   renderPaymentOverlay = () => {

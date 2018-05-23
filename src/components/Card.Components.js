@@ -2,7 +2,7 @@ import Link from './Link'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  margin: 10px;
+  margin: 20px;
   position: relative;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const BackgroundImage = styled.div`
   background-image: url(${props => props.src});
   background-size: cover;
-  padding-bottom: ${100*(3/4)}%;
+  padding-bottom: ${100*(9/16)}%;
 `;
 export const ContainerInfo = styled.div`
   display: flex;
