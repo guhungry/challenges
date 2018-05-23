@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render currectly 1`] = `
+<div
+  className="sc-bdVaJa KmHrp"
+  disabled={false}
+  onClick={[Function]}
+>
+  TITLE
+</div>
+`;
