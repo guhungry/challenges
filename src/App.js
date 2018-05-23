@@ -6,7 +6,7 @@ import ResponsiveRow from './components/ResponsiveRow';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import * as api from './services/TamboonApi'
-import { summaryDonations } from './helpers';
+import { donationAmount, summaryDonations } from './helpers';
 
 const AppContainer = styled.div`
   font-family: Circular, Arial, sans-serif;
@@ -33,7 +33,7 @@ class App extends Component {
   // ///////////////////
   componentDidMount() {
     api.charities().then(data => this.setState({ charities: data }));
-    api.payments().then(data => this.props.updateTotalDonate(summaryDonations(data.map(item => item.amount || 0))))
+    api.payments().then(data => this.props.updateTotalDonate(summaryDonations(data.map(donationAmount))))
   }
 
   // ////////////////
