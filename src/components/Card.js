@@ -12,7 +12,7 @@ export default class Card extends PureComponent {
     onPay: PropTypes.func
   }
 
-  state = { selectedAmount: 0, showPayment: false };
+  state = { selectedAmount: 10, showPayment: false };
 
   // ////////////////
   // Render Functions
@@ -38,7 +38,7 @@ export default class Card extends PureComponent {
   renderPaymentOverlay = () => {
     const { item, onPay } = this.props
     const { selectedAmount } = this.state
-    const payments = [10, 20, 50, 100, 500].map(this.renderPayment);
+    const payments = [10, 20, 50, 100, 500].map(this.renderPayment(item.id, selectedAmount));
 
     return (
       <Overlay>
@@ -52,7 +52,7 @@ export default class Card extends PureComponent {
     )
   }
 
-  renderPayment = (amount, key) => <RadioButton key={key} name='payment' onChange={this.setAmount(amount)} title={amount} />
+  renderPayment = (id, selectedAmount) => (amount, key) => <RadioButton key={key} name={`name[${id}]`} checked={selectedAmount === amount} onChange={this.setAmount(amount)} title={amount} />
 
   // ////////////////
   // Helper Functions
