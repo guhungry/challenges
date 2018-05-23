@@ -1,5 +1,5 @@
 import React from 'react';
-import Button, { Container } from '../Button';
+import Button, { Container } from './Button';
 import renderer from 'react-test-renderer';
 
 describe('Button', function() {

@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from '../Card';
-import { BackgroundImage } from '../Card.Components';
-import Button from '../Button';
+import Card from './Card';
+import { BackgroundImage } from './Card.Components';
+import Button from './Button';
 import renderer from 'react-test-renderer';
 
 describe('Card', function() {
