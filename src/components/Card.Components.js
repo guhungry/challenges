@@ -12,13 +12,18 @@ export const Container = styled.div`
 export const BackgroundImage = styled.div`
   background-image: url(${props => props.src});
   background-size: cover;
-  padding-bottom: ${100*(9/16)}%;
+  padding-bottom: ${100*(248/580)}%;
 `;
 export const ContainerInfo = styled.div`
   display: flex;
-  padding: 10px 15px;
+  height: 60px;
+  padding: 0 15px;
   justify-content: space-between;
   align-items: center;
+  @media (min-width: 768px) {
+    height: 80px;
+    padding: 0 26px;
+  }
 `;
 export const Overlay = styled.div`
   position: absolute;
