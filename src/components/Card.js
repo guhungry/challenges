@@ -46,7 +46,7 @@ export default class Card extends PureComponent {
         <ContainerPopup>
           <div>Select the amount to donate ({item.currency})</div>
           <ContainerOption>{ payments }</ContainerOption>
-          <Button onClick={onPay(item.id, selectedAmount, item.currency)} title='Pay' />
+          <Button disabled={selectedAmount <= 0} onClick={onPay(item.id, selectedAmount, item.currency)} title='Pay' />
         </ContainerPopup>
       </Overlay>
     )
