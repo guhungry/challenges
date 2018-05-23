@@ -1,4 +1,4 @@
-import styled from 'styled-components/typings/styled-components'
+import styled from 'styled-components'
 
 export const AppContainer = styled.div`
   font-family: Circular, Arial, sans-serif;
