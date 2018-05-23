@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 
 export default class Card extends PureComponent {
   static propTypes = {
-    item: PropTypes.object,
+    item: PropTypes.object.isRequired,
     onPay: PropTypes.func
   }
 

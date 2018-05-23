@@ -5,9 +5,8 @@ import ResponsiveRow from './components/ResponsiveRow';
 
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import fetch from 'isomorphic-fetch';
 import * as api from './services/TamboonApi'
-import { responseToJson, summaryDonations } from './helpers';
+import { summaryDonations } from './helpers';
 
 const AppContainer = styled.div`
   font-family: Circular, Arial, sans-serif;
@@ -25,13 +24,8 @@ const Message = styled.p`
 `;
 
 class App extends Component {
-  constructor(props) {
-    super();
-
-    this.state = {
-      charities: [],
-      selectedAmount: 10,
-    };
+  state = {
+    charities: [],
   }
 
   // ///////////////////

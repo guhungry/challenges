@@ -2,8 +2,27 @@
 
 exports[`Card should render currectly 1`] = `
 <div
-  className="sc-bdVaJa dPclma"
+  className="sc-htpNat hnnook"
 >
-  fdsafds
+  <div
+    className="sc-ifAKCX jRXylC"
+  >
+    <div
+      className="sc-EHOje eUpySP"
+      src="/images/bee"
+    />
+    <div
+      className="sc-bZQynM bjIoQH"
+    >
+      <p />
+      <div
+        className="sc-bdVaJa KmHrp"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Donate
+      </div>
+    </div>
+  </div>
 </div>
 `;
