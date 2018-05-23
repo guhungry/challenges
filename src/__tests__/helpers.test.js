@@ -1,4 +1,4 @@
-import { donationAmount, summaryDonations } from '../helpers';
+import { donationAmount, responseToJson, summaryDonations } from '../helpers';
 
 describe('helpers', function() {
   test('`summaryDonations` should calculate donations correctly [1, 2, 3, 4] = 10', function() {
@@ -11,5 +11,13 @@ describe('helpers', function() {
 
   test('`donationAmount` should return 0 when data invalid', function() {
     expect(donationAmount({ })).toEqual(0);
+  });
+
+  test('`responseToJson` should call json() on response object', function() {
+    const sut = { json: jest.fn() }
+
+    responseToJson(sut)
+
+    expect(sut.json.mock.calls.length).toEqual(1);
   });
 });
