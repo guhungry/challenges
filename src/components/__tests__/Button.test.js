@@ -1,7 +1,6 @@
 import React from 'react';
 import Button, { Container } from '../Button';
 import renderer from 'react-test-renderer';
-import utils from 'react-dom/test-utils';
 
 describe('Button', function() {
   test('should render currectly', function() {
