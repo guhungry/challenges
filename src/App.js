@@ -7,7 +7,7 @@ import { AppContainer, AppTitle, Message } from './App.Components'
 import { connect } from 'react-redux';
 import * as api from './services/TamboonApi'
 import { donationAmount, summaryDonations } from './helpers';
-
+import DonationAction from './redux/DonationRedux'
 
 class App extends Component {
   state = {
@@ -26,7 +26,7 @@ class App extends Component {
   // Render Functions
   // ////////////////
   render() {
-    const { donate, message } = this.props;
+    const { donation: { donate, message } } = this.props;
     const { charities } = this.state
 
     return (
@@ -63,8 +63,8 @@ const mapStateToProps = state => state
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateTotalDonate: amount => dispatch({ type: 'UPDATE_TOTAL_DONATE', amount }),
-    updateMessage: message => dispatch({ type: 'UPDATE_MESSAGE', message })
+    updateTotalDonate: amount => dispatch(DonationAction.updateTotalDonation(amount)),
+    updateMessage: message => dispatch(DonationAction.updateMessage(message))
   }
 }
 

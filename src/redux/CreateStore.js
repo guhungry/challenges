@@ -1,21 +1,30 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+// import createSagaMiddleware from 'redux-saga'
+// import { createLogger } from 'redux-logger'
 
-export default () => createStore(function(state, action) {
-  const _state = state == null ? {
-    donate: 0,
-    message: '',
-  } : state;
+// creates the store
+export default (rootReducer, rootSaga) => {
+  /* ------------- Redux Configuration ------------- */
 
-  switch (action.type) {
-    case 'UPDATE_TOTAL_DONATE':
-      return Object.assign({}, _state, {
-        donate: _state.donate + action.amount,
-      });
-    case 'UPDATE_MESSAGE':
-      return Object.assign({}, _state, {
-        message: action.message,
-      });
+  const middleware = []
+  const enhancers = []
 
-    default: return _state;
-  }
-});
+  /* ------------- Logger Middleware ------------- */
+  // middleware.push(createLogger({ predicate: (getState, action) => __DEV__ }))
+
+  /* ------------- Saga Middleware ------------- */
+
+  // const sagaMiddleware = createSagaMiddleware({  })
+  // middleware.push(sagaMiddleware)
+
+  /* ------------- Assemble Middleware ------------- */
+
+  enhancers.push(applyMiddleware(...middleware))
+
+  const store = createStore(rootReducer, compose(...enhancers))
+
+  // kick off root saga
+  // sagaMiddleware.run(rootSaga)
+
+  return store
+}
