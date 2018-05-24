@@ -12,7 +12,7 @@
 		69CFFB247D3A3F9FCA07CB57 /* Pods_tamboon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141320C84297A8B669A6165E /* Pods_tamboon.framework */; };
 		74B2C6E620B6D57300491460 /* Dummy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 74B2C6E520B6D57300491460 /* Dummy.jpg */; };
 		74E969CA20B6C66B002CC79F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E969C920B6C66B002CC79F /* AppDelegate.swift */; };
-		74E969CC20B6C66B002CC79F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E969CB20B6C66B002CC79F /* ViewController.swift */; };
+		74E969CC20B6C66B002CC79F /* DonationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E969CB20B6C66B002CC79F /* DonationListView.swift */; };
 		74E969CF20B6C66B002CC79F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E969CD20B6C66B002CC79F /* Main.storyboard */; };
 		74E969D220B6C66B002CC79F /* tamboon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74E969D020B6C66B002CC79F /* tamboon.xcdatamodeld */; };
 		74E969D420B6C672002CC79F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E969D320B6C672002CC79F /* Assets.xcassets */; };
@@ -46,7 +46,7 @@
 		74B2C6E520B6D57300491460 /* Dummy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dummy.jpg; sourceTree = "<group>"; };
 		74E969C620B6C66B002CC79F /* tamboon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tamboon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E969C920B6C66B002CC79F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		74E969CB20B6C66B002CC79F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74E969CB20B6C66B002CC79F /* DonationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationListView.swift; sourceTree = "<group>"; };
 		74E969CE20B6C66B002CC79F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74E969D120B6C66B002CC79F /* tamboon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tamboon.xcdatamodel; sourceTree = "<group>"; };
 		74E969D320B6C672002CC79F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		74B2C6E820B6D72500491460 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				74E969CB20B6C66B002CC79F /* ViewController.swift */,
+				74E969CB20B6C66B002CC79F /* DonationListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E969CC20B6C66B002CC79F /* ViewController.swift in Sources */,
+				74E969CC20B6C66B002CC79F /* DonationListView.swift in Sources */,
 				74E969CA20B6C66B002CC79F /* AppDelegate.swift in Sources */,
 				74E969D220B6C66B002CC79F /* tamboon.xcdatamodeld in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DonationListView.swift
 //  tamboon
 //
 //  Created by Woraphot Chokratanasombat on 24/5/2561 BE.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableDonation: UITableView!
     
     override func viewDidLoad() {
