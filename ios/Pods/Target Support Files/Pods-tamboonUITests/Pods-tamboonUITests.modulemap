@@ -1,0 +1,6 @@
+framework module Pods_tamboonUITests {
+  umbrella header "Pods-tamboonUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
