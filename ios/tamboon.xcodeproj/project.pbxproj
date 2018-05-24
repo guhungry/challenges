@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0B41B3A1CCDF381AB23D6A8C /* Pods_tamboonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0074A3A20DCC514D7CACFF58 /* Pods_tamboonTests.framework */; };
+		30D9C7F984BFEF3EB2F4C545 /* DonationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9CEAEFE985188BB5E0986 /* DonationPresenter.swift */; };
 		4A117FEFCF81F3B51ED18C3C /* Pods_tamboonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57BDAC0CB282AE0C3071158 /* Pods_tamboonUITests.framework */; };
 		69CFFB247D3A3F9FCA07CB57 /* Pods_tamboon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141320C84297A8B669A6165E /* Pods_tamboon.framework */; };
 		74B2C6E620B6D57300491460 /* Dummy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 74B2C6E520B6D57300491460 /* Dummy.jpg */; };
 		74B2C6EA20B6DAEB00491460 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B2C6E920B6DAEB00491460 /* DonationView.swift */; };
+		74B2C6ED20B6E00800491460 /* DonationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B2C6EC20B6E00800491460 /* DonationListPresenter.swift */; };
 		74E969CA20B6C66B002CC79F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E969C920B6C66B002CC79F /* AppDelegate.swift */; };
 		74E969CC20B6C66B002CC79F /* DonationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E969CB20B6C66B002CC79F /* DonationListView.swift */; };
 		74E969CF20B6C66B002CC79F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E969CD20B6C66B002CC79F /* Main.storyboard */; };
@@ -42,10 +44,12 @@
 /* Begin PBXFileReference section */
 		0074A3A20DCC514D7CACFF58 /* Pods_tamboonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tamboonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		141320C84297A8B669A6165E /* Pods_tamboon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tamboon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30D9CEAEFE985188BB5E0986 /* DonationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationPresenter.swift; sourceTree = "<group>"; };
 		46C4A59FB355355040FDF2C1 /* Pods-tamboonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tamboonUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tamboonUITests/Pods-tamboonUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5E10D0977E3CE902F573C8CC /* Pods-tamboon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tamboon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tamboon/Pods-tamboon.debug.xcconfig"; sourceTree = "<group>"; };
 		74B2C6E520B6D57300491460 /* Dummy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dummy.jpg; sourceTree = "<group>"; };
 		74B2C6E920B6DAEB00491460 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
+		74B2C6EC20B6E00800491460 /* DonationListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationListPresenter.swift; sourceTree = "<group>"; };
 		74E969C620B6C66B002CC79F /* tamboon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tamboon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E969C920B6C66B002CC79F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E969CB20B6C66B002CC79F /* DonationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationListView.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 		74B2C6E720B6D6CD00491460 /* DonationList */ = {
 			isa = PBXGroup;
 			children = (
+				74B2C6EB20B6DFE900491460 /* Presenter */,
 				74B2C6E820B6D72500491460 /* View */,
 			);
 			path = DonationList;
@@ -118,6 +123,15 @@
 				74B2C6E920B6DAEB00491460 /* DonationView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		74B2C6EB20B6DFE900491460 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				74B2C6EC20B6E00800491460 /* DonationListPresenter.swift */,
+				30D9CEAEFE985188BB5E0986 /* DonationPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		74E969BD20B6C66B002CC79F = {
@@ -390,10 +404,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B2C6ED20B6E00800491460 /* DonationListPresenter.swift in Sources */,
 				74B2C6EA20B6DAEB00491460 /* DonationView.swift in Sources */,
 				74E969CC20B6C66B002CC79F /* DonationListView.swift in Sources */,
 				74E969CA20B6C66B002CC79F /* AppDelegate.swift in Sources */,
 				74E969D220B6C66B002CC79F /* tamboon.xcdatamodeld in Sources */,
+				30D9C7F984BFEF3EB2F4C545 /* DonationPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

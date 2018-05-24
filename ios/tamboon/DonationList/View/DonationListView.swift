@@ -1,5 +1,5 @@
 //
-//  DonationListView.swift
+//  DonationListPresenter.swift
 //  tamboon
 //
 //  Created by Woraphot Chokratanasombat on 24/5/2561 BE.
@@ -9,11 +9,14 @@
 import UIKit
 
 class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var presenter: DonationListPresenter!
     @IBOutlet weak var tableDonation: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+        presenter = DonationListPresenter()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,11 +25,17 @@ class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2;
+        return presenter.numberOfDonations();
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.tableDonation.dequeueReusableCell(withIdentifier: "DonationRow", for: indexPath)
+        if let cell = self.tableDonation.dequeueReusableCell(withIdentifier: "DonationRow", for: indexPath) as? DonationView {
+
+            let donation = presenter.donation(atIndex: indexPath.row)
+            cell.set(forDonation: donation)
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 

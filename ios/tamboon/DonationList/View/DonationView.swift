@@ -11,4 +11,8 @@ import UIKit
 class DonationView : UITableViewCell {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var name: UILabel!
+
+    func set(forDonation data: DonationPresenter) {
+        name.text = data.name()
+    }
 }
