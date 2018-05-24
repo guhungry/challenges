@@ -101,6 +101,22 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		74B2C6E720B6D6CD00491460 /* DonationList */ = {
+			isa = PBXGroup;
+			children = (
+				74B2C6E820B6D72500491460 /* View */,
+			);
+			path = DonationList;
+			sourceTree = "<group>";
+		};
+		74B2C6E820B6D72500491460 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74E969CB20B6C66B002CC79F /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		74E969BD20B6C66B002CC79F = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +142,9 @@
 		74E969C820B6C66B002CC79F /* tamboon */ = {
 			isa = PBXGroup;
 			children = (
-				74B2C6E420B6D54200491460 /* Images */,
 				74E969C920B6C66B002CC79F /* AppDelegate.swift */,
-				74E969CB20B6C66B002CC79F /* ViewController.swift */,
+				74B2C6E720B6D6CD00491460 /* DonationList */,
+				74B2C6E420B6D54200491460 /* Images */,
 				74E969CD20B6C66B002CC79F /* Main.storyboard */,
 				74E969D320B6C672002CC79F /* Assets.xcassets */,
 				74E969D520B6C672002CC79F /* LaunchScreen.storyboard */,
