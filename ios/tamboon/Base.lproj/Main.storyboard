@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DonationRow" rowHeight="165" id="xAC-gg-aJC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DonationRow" rowHeight="165" id="xAC-gg-aJC" customClass="DonationView" customModule="tamboon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xAC-gg-aJC" id="XDI-lS-QPa">
@@ -38,9 +38,19 @@
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wh6-pP-YdY">
                                                     <rect key="frame" x="0.0" y="125" width="375" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eZ-x3-icE">
+                                                            <rect key="frame" x="8" y="10" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="FNN-lF-IJw"/>
+                                                        <constraint firstItem="8eZ-x3-icE" firstAttribute="leading" secondItem="Wh6-pP-YdY" secondAttribute="leading" constant="8" id="bF6-O4-Ucp"/>
+                                                        <constraint firstItem="8eZ-x3-icE" firstAttribute="centerY" secondItem="Wh6-pP-YdY" secondAttribute="centerY" id="yiZ-qr-mWH"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -54,6 +64,10 @@
                                                 <constraint firstItem="i9T-wF-vhr" firstAttribute="trailing" secondItem="XDI-lS-QPa" secondAttribute="trailing" id="yjE-Gm-naz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="8eZ-x3-icE" id="aqn-49-dXm"/>
+                                            <outlet property="picture" destination="i9T-wF-vhr" id="e8S-CY-Qc7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
