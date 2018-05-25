@@ -10,6 +10,7 @@ import Foundation
 
 class DonationListPresenter : DonationListPresenterProtocol {
     var view: DonationListViewProtocol!
+    var wireframe: DonationListWireframeProtocol!
 
     func onReceived(donations: [DonationModel]) {
         view?.showDonations(with: donations)

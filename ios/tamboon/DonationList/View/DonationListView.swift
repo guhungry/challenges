@@ -21,7 +21,7 @@ class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSo
         presenter?.view = self
 
         presenter?.onReceived(donations: [
-            DonationModel(name: "bee", picture: "https://static-cdn.jtvnw.net/jtv_user_pictures/9b59dba2e1d2a11f-profile_image-70x70.png"),
+            DonationModel(name: "baee", picture: "https://static-cdn.jtvnw.net/jtv_user_pictures/9b59dba2e1d2a11f-profile_image-70x70.png"),
             DonationModel(name: "baa", picture: "https://static-cdn.jtvnw.net/jtv_user_pictures/9b59dba2e1d2a11f-profile_image-70x70.png"),
             DonationModel(name: "fdae", picture: "https://static-cdn.jtvnw.net/jtv_user_pictures/9b59dba2e1d2a11f-profile_image-70x70.png")
         ])

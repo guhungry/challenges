@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Woraphot Chokratanasombat. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol DonationViewProtocol {
     func set(donation: DonationModel)
@@ -17,6 +17,11 @@ protocol DonationListViewProtocol {
 
 protocol DonationListPresenterProtocol {
     var view: DonationListViewProtocol! { get set }
+    var wireframe: DonationListWireframeProtocol! { get set }
 
     func onReceived(donations: [DonationModel])
+}
+
+protocol DonationListWireframeProtocol {
+    static func createDonationListModule() -> UIViewController
 }
