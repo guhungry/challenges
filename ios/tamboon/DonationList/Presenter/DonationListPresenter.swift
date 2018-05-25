@@ -9,11 +9,9 @@
 import Foundation
 
 class DonationListPresenter : DonationListPresenterProtocol {
-    func numberOfDonations () -> Int {
-        return 3
-    }
+    var view: DonationListViewProtocol!
 
-    func donation(atIndex index: Int) -> DonationPresenterProtocol {
-        return DonationPresenter()
+    func onReceived(donations: [DonationModel]) {
+        view?.showDonations(with: donations)
     }
 }

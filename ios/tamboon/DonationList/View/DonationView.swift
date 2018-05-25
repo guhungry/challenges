@@ -12,7 +12,7 @@ class DonationView : UITableViewCell {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var name: UILabel!
 
-    func set(donation data: DonationPresenterProtocol) {
-        name.text = data.name()
+    func set(donation data: DonationModel) {
+        name.text = data.name
     }
 }

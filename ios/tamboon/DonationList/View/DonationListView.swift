@@ -8,15 +8,19 @@
 
 import UIKit
 
-class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSource, DonationListViewProtocol {
+class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet weak var tableDonation: UITableView!
-    var presenter: DonationListPresenterProtocol!
+    var presenter: DonationListPresenterProtocol?
+    private var donations : [DonationModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
         presenter = DonationListPresenter()
+        presenter?.view = self
+
+        presenter?.onReceived(donations: [DonationModel(name: "bee"), DonationModel(name: "baa"), DonationModel(name: "fdae")])
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,15 +29,21 @@ class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.numberOfDonations();
+        return donations.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.tableDonation.dequeueReusableCell(withIdentifier: "DonationRow", for: indexPath) as? DonationView {
-            cell.set(donation: presenter.donation(atIndex: indexPath.row))
+            cell.set(donation: donations[indexPath.row])
             return cell
         }
         return UITableViewCell()
+    }
+}
+
+extension DonationListView : DonationListViewProtocol {
+    func showDonations (with donations: [DonationModel]) {
+        self.donations = donations
     }
 }
 
