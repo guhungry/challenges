@@ -5,7 +5,7 @@
 
 import Foundation
 
-class DonationPresenter {
+class DonationPresenter : DonationPresenterProtocol {
     func name() -> String {
         return "NAME"
     }

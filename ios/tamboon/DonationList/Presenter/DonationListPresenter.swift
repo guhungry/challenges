@@ -13,7 +13,7 @@ class DonationListPresenter : DonationListPresenterProtocol {
         return 3
     }
 
-    func donation(atIndex index: Int) -> DonationPresenter {
+    func donation(atIndex index: Int) -> DonationPresenterProtocol {
         return DonationPresenter()
     }
 }

@@ -5,11 +5,19 @@
 
 import Foundation
 
+protocol DonationViewProtocol {
+    func set(donation: DonationPresenterProtocol)
+}
+
 protocol DonationListViewProtocol {
     var presenter: DonationListPresenterProtocol! { get set }
 }
 
 protocol DonationListPresenterProtocol {
     func numberOfDonations () -> Int
-    func donation(atIndex index: Int) -> DonationPresenter
+    func donation(atIndex index: Int) -> DonationPresenterProtocol
+}
+
+protocol DonationPresenterProtocol {
+    func name () -> String
 }

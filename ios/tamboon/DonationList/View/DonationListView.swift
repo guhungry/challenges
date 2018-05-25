@@ -30,7 +30,7 @@ class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.tableDonation.dequeueReusableCell(withIdentifier: "DonationRow", for: indexPath) as? DonationView {
-            cell.set(forDonation: presenter.donation(atIndex: indexPath.row))
+            cell.set(donation: presenter.donation(atIndex: indexPath.row))
             return cell
         }
         return UITableViewCell()
