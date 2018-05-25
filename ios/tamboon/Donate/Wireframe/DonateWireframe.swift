@@ -8,6 +8,7 @@ import UIKit
 class DonateWireframe : BaseWireframe, DonateWireframeProtocol {
     class func createDonateModule(from donation: DonationModel) -> UIViewController {
         if let view = mainStoryboard.instantiateViewController(withIdentifier: "DonateView") as? DonateView {
+            view.donation = donation
             return view
         }
         return UIViewController()

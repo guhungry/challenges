@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Donation List View-->
+        <!--Donation List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="DonationListView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="DonationListView" customModule="tamboon" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,7 +86,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6dj-Hz-x9k"/>
+                    <navigationItem key="navigationItem" title="Donation List" id="6dj-Hz-x9k"/>
                     <connections>
                         <outlet property="tableDonation" destination="sWS-58-dHD" id="gW2-VW-vfU"/>
                     </connections>
@@ -95,21 +95,64 @@
             </objects>
             <point key="canvasLocation" x="392.80000000000001" y="38.23088455772114"/>
         </scene>
-        <!--Donate View-->
+        <!--Donate-->
         <scene sceneID="2D0-xU-4bG">
             <objects>
                 <viewController storyboardIdentifier="DonateView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tk5-iG-qjF" customClass="DonateView" customModule="tamboon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VYW-h1-XGI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz4-gK-Kb1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="211"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="58V-AM-yWN">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPK-2m-tUT">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29693001760563381" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eax-RU-LHr">
+                                        <rect key="frame" x="166" y="95" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="PPK-2m-tUT" secondAttribute="trailing" id="1RR-z5-jXl"/>
+                                    <constraint firstItem="58V-AM-yWN" firstAttribute="leading" secondItem="mz4-gK-Kb1" secondAttribute="leading" id="4eZ-Qn-Ntg"/>
+                                    <constraint firstItem="eax-RU-LHr" firstAttribute="centerY" secondItem="mz4-gK-Kb1" secondAttribute="centerY" id="5KY-uh-Ybh"/>
+                                    <constraint firstItem="eax-RU-LHr" firstAttribute="centerX" secondItem="mz4-gK-Kb1" secondAttribute="centerX" id="CUM-mx-Vlb"/>
+                                    <constraint firstAttribute="bottom" secondItem="PPK-2m-tUT" secondAttribute="bottom" id="FHX-rN-VrL"/>
+                                    <constraint firstItem="58V-AM-yWN" firstAttribute="trailing" secondItem="mz4-gK-Kb1" secondAttribute="trailing" id="H7X-Gq-ULl"/>
+                                    <constraint firstItem="PPK-2m-tUT" firstAttribute="top" secondItem="mz4-gK-Kb1" secondAttribute="top" id="Yzf-Kq-PJh"/>
+                                    <constraint firstItem="58V-AM-yWN" firstAttribute="bottom" secondItem="mz4-gK-Kb1" secondAttribute="bottom" id="cXt-47-osu"/>
+                                    <constraint firstItem="PPK-2m-tUT" firstAttribute="leading" secondItem="mz4-gK-Kb1" secondAttribute="leading" id="dLy-7C-UYm"/>
+                                    <constraint firstItem="58V-AM-yWN" firstAttribute="top" secondItem="mz4-gK-Kb1" secondAttribute="top" id="onT-My-Saa"/>
+                                    <constraint firstAttribute="width" secondItem="mz4-gK-Kb1" secondAttribute="height" multiplier="16:9" id="wYT-xR-ft8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mz4-gK-Kb1" firstAttribute="leading" secondItem="Tbp-Iq-3Yg" secondAttribute="leading" id="YrW-Wa-mGo"/>
+                            <constraint firstItem="mz4-gK-Kb1" firstAttribute="top" secondItem="Tbp-Iq-3Yg" secondAttribute="top" id="bQ9-S0-2U1"/>
+                            <constraint firstItem="mz4-gK-Kb1" firstAttribute="trailing" secondItem="Tbp-Iq-3Yg" secondAttribute="trailing" id="m0O-xI-3zh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Tbp-Iq-3Yg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cVA-4u-QpW"/>
+                    <navigationItem key="navigationItem" title="Donate" id="cVA-4u-QpW"/>
+                    <connections>
+                        <outlet property="name" destination="eax-RU-LHr" id="cr8-ic-At2"/>
+                        <outlet property="picture" destination="58V-AM-yWN" id="2OE-wG-QM5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9X-ts-Vwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="38"/>
+            <point key="canvasLocation" x="1197.5999999999999" y="37.331334332833585"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DiK-qX-F4R">
