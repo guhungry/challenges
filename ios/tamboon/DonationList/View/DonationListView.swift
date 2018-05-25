@@ -17,9 +17,6 @@ class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        presenter = DonationListPresenter()
-        presenter?.view = self
-
         presenter?.onReceived(donations: [
             DonationModel(name: "baee", picture: "https://static-cdn.jtvnw.net/jtv_user_pictures/9b59dba2e1d2a11f-profile_image-70x70.png"),
             DonationModel(name: "baa", picture: "https://static-cdn.jtvnw.net/jtv_user_pictures/9b59dba2e1d2a11f-profile_image-70x70.png"),
@@ -42,6 +39,14 @@ class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSo
             return cell
         }
         return UITableViewCell()
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.showDonate(forDonation: donations[indexPath.row])
+    }
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath
     }
 }
 

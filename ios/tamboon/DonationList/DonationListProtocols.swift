@@ -20,8 +20,10 @@ protocol DonationListPresenterProtocol {
     var wireframe: DonationListWireframeProtocol! { get set }
 
     func onReceived(donations: [DonationModel])
+    func showDonate(forDonation donation: DonationModel)
 }
 
 protocol DonationListWireframeProtocol {
+    func presentDonateScreen(from view: DonationListViewProtocol, for donation: DonationModel)
     static func createDonationListModule() -> UIViewController
 }

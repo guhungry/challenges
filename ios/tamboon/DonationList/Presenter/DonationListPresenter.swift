@@ -15,4 +15,8 @@ class DonationListPresenter : DonationListPresenterProtocol {
     func onReceived(donations: [DonationModel]) {
         view?.showDonations(with: donations)
     }
+
+    func showDonate(forDonation donation: DonationModel) {
+        wireframe?.presentDonateScreen(from: view,for: donation)
+    }
 }

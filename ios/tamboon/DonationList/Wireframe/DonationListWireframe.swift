@@ -5,7 +5,7 @@
 
 import UIKit
 
-class DonationListWireframe : DonationListWireframeProtocol {
+class DonationListWireframe : BaseWireframe, DonationListWireframeProtocol {
     class func createDonationListModule() -> UIViewController {
         let navController = mainStoryboard.instantiateInitialViewController()
         if let view = navController?.childViewControllers.first as? DonationListView {
@@ -20,7 +20,8 @@ class DonationListWireframe : DonationListWireframeProtocol {
         return UIViewController()
     }
 
-    static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
+    func presentDonateScreen(from view: DonationListViewProtocol, for donation: DonationModel) {
+        let target = UIViewController()
+        pushScreen(from: view as? UIViewController, to: target)
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B41B3A1CCDF381AB23D6A8C /* Pods_tamboonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0074A3A20DCC514D7CACFF58 /* Pods_tamboonTests.framework */; };
 		30D9C05BA7E7A4D2E762E723 /* DonationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9CC240687E75B6C839049 /* DonationModel.swift */; };
+		30D9C0E82031EEDAEB6B56CD /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9C5D85E22375A210ADF96 /* BaseWireframe.swift */; };
 		30D9C789B38822540633A3AA /* DonationListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9CD233953C2F41F567617 /* DonationListProtocols.swift */; };
 		30D9CE8D7F358F43F753A9C9 /* DonationListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9C275113AFCFA26C6CF09 /* DonationListWireframe.swift */; };
 		4A117FEFCF81F3B51ED18C3C /* Pods_tamboonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57BDAC0CB282AE0C3071158 /* Pods_tamboonUITests.framework */; };
@@ -47,6 +48,7 @@
 		0074A3A20DCC514D7CACFF58 /* Pods_tamboonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tamboonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		141320C84297A8B669A6165E /* Pods_tamboon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tamboon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D9C275113AFCFA26C6CF09 /* DonationListWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationListWireframe.swift; sourceTree = "<group>"; };
+		30D9C5D85E22375A210ADF96 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		30D9CC240687E75B6C839049 /* DonationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationModel.swift; sourceTree = "<group>"; };
 		30D9CD233953C2F41F567617 /* DonationListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationListProtocols.swift; sourceTree = "<group>"; };
 		46C4A59FB355355040FDF2C1 /* Pods-tamboonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tamboonUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tamboonUITests/Pods-tamboonUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				74E969D520B6C672002CC79F /* LaunchScreen.storyboard */,
 				74E969D820B6C672002CC79F /* Info.plist */,
 				74E969D020B6C66B002CC79F /* tamboon.xcdatamodeld */,
+				30D9C5D85E22375A210ADF96 /* BaseWireframe.swift */,
 			);
 			path = tamboon;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				30D9C789B38822540633A3AA /* DonationListProtocols.swift in Sources */,
 				30D9C05BA7E7A4D2E762E723 /* DonationModel.swift in Sources */,
 				30D9CE8D7F358F43F753A9C9 /* DonationListWireframe.swift in Sources */,
+				30D9C0E82031EEDAEB6B56CD /* BaseWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
