@@ -7,4 +7,5 @@ import Foundation
 
 struct DonationModel {
     var name : String
+    var picture: String
 }
