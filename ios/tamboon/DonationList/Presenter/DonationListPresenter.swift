@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DonationListPresenter {
+class DonationListPresenter : DonationListPresenterProtocol {
     func numberOfDonations () -> Int {
         return 3
     }

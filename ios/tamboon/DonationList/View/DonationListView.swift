@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var presenter: DonationListPresenter!
+class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSource, DonationListViewProtocol {
     @IBOutlet weak var tableDonation: UITableView!
+    var presenter: DonationListPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,7 @@ class DonationListView: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.tableDonation.dequeueReusableCell(withIdentifier: "DonationRow", for: indexPath) as? DonationView {
-
-            let donation = presenter.donation(atIndex: indexPath.row)
-            cell.set(forDonation: donation)
+            cell.set(forDonation: presenter.donation(atIndex: indexPath.row))
             return cell
         }
         return UITableViewCell()
