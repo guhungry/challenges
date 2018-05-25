@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class DonationView : UITableViewCell {
+class DonationTableCellView: UITableViewCell {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var name: UILabel!
 
