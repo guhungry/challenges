@@ -21,7 +21,7 @@ class DonationListWireframe : BaseWireframe, DonationListWireframeProtocol {
     }
 
     func presentDonateScreen(from view: DonationListViewProtocol, for donation: DonationModel) {
-        let target = UIViewController()
+        let target = DonateWireframe.createDonateModule(from: donation)
         pushScreen(from: view as? UIViewController, to: target)
     }
 }

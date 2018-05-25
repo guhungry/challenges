@@ -14,7 +14,7 @@
         <!--Donation List View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DonationListView" customModule="tamboon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DonationListView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="DonationListView" customModule="tamboon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +94,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="392.80000000000001" y="38.23088455772114"/>
+        </scene>
+        <!--Donate View-->
+        <scene sceneID="2D0-xU-4bG">
+            <objects>
+                <viewController storyboardIdentifier="DonateView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tk5-iG-qjF" customClass="DonateView" customModule="tamboon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VYW-h1-XGI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tbp-Iq-3Yg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cVA-4u-QpW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9X-ts-Vwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1199" y="38"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DiK-qX-F4R">

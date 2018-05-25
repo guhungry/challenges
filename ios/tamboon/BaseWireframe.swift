@@ -12,7 +12,7 @@ class BaseWireframe {
 
     func pushScreen(from : UIViewController?, to : UIViewController?) {
         if let from = from as? UIViewController, let to = to as? UIViewController {
-            from.navigationController?.present(to, animated: true)
+            from.navigationController?.pushViewController(to, animated: true)
         }
     }
 }
